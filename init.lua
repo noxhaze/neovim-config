@@ -45,8 +45,6 @@ vim.keymap.set("n", "<Leader>ff", "<cmd>Telescope find_files<cr>", opts);
 vim.keymap.set("n", "<Leader>fb", "<cmd>Telescope buffers<cr>", opts);
 vim.keymap.set("n", "<C-p>", ":lua require('telescope').extensions.project.project{}<CR>", opts);
 
-vim.keymap.set("n", "<C-n>", ":e ./<CR>", opts);
-
 vim.keymap.set("n", "<Leader>h", ":lua require('nvterm.terminal').new 'horizontal'<CR>", opts)
 vim.keymap.set("n", "<Leader>v", ":lua require('nvterm.terminal').new 'vertical'<CR>", opts)
 vim.keymap.set("n", "<A-h>", ":lua require('nvterm.terminal').toggle 'horizontal'<CR>", opts);
@@ -58,6 +56,8 @@ vim.keymap.set("t", "<A-v>", "<C-\\><C-N> :lua require('nvterm.terminal').toggle
 vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", opts)
 vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", opts)
 vim.keymap.set("n", "<Leader>x", ":BufferLineCyclePrev<CR> :BufferLineCloseRight<CR>", opts)
+
+vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>", opts)
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
