@@ -55,6 +55,9 @@ vim.keymap.set("t", "<C-x>", "<C-\\><C-N>", opts)
 vim.keymap.set("t", "<A-h>", "<C-\\><C-N> :lua require('nvterm.terminal').toggle 'horizontal'<CR>", opts)
 vim.keymap.set("t", "<A-v>", "<C-\\><C-N> :lua require('nvterm.terminal').toggle 'vertical'<CR>", opts)
 
+vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", opts)
+vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", opts)
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
