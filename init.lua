@@ -77,4 +77,3 @@ require("lazy").setup(plugins, opts)
 require("lsp")
 
 vim.cmd("colorscheme tomorrow-night")
-
