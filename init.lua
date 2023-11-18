@@ -55,7 +55,7 @@ vim.keymap.set("t", "<A-v>", "<C-\\><C-N> :lua require('nvterm.terminal').toggle
 
 vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", opts)
 vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", opts)
-vim.keymap.set("n", "<Leader>x", ":BufferLineCyclePrev<CR> :BufferLineCloseRight<CR>", opts)
+vim.keymap.set("n", "<Leader>x", ":bp <BAR> bd #<CR>", opts)
 
 vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>", opts)
 
