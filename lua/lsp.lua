@@ -9,7 +9,7 @@ require("mason").setup({
 })
 
 require("mason-lspconfig").setup({
-    ensure_installed = { "clangd", "rust_analyzer", "omnisharp", "lua_ls", "svelte", "tsserver" },
+    ensure_installed = { "clangd", "rust_analyzer", "omnisharp", "lua_ls", "svelte", "tsserver", "cssls" },
 })
 
 local lspconfig = require("lspconfig")
@@ -67,3 +67,15 @@ lspconfig.tsserver.setup({
     on_attach = on_attach,
 })
 
+lspconfig.cssls.setup({
+    on_attach = on_attach,
+    capabilities = {
+        textDocument = {
+            completion = {
+                completionItem = {
+                    snippetSupport = true
+                }
+            }
+        }
+    }
+})
