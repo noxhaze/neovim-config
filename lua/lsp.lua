@@ -9,7 +9,7 @@ require("mason").setup({
 })
 
 require("mason-lspconfig").setup({
-    ensure_installed = { "clangd", "rust_analyzer", "omnisharp", "lua_ls", "svelte", "tsserver", "cssls" },
+    ensure_installed = { "clangd", "rust_analyzer", "omnisharp", "lua_ls", "svelte", "tsserver", "cssls", "bashls" },
 })
 
 local lspconfig = require("lspconfig")
@@ -78,4 +78,8 @@ lspconfig.cssls.setup({
             }
         }
     }
+})
+
+lspconfig.bashls.setup({
+    on_attach = on_attach,
 })

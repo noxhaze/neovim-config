@@ -161,7 +161,17 @@ return {
           "nvim-lua/plenary.nvim",
           "nvim-tree/nvim-web-devicons",
           "MunifTanjim/nui.nvim",
-        }
+        },
+        config = {
+            filesystem = {
+                filtered_items = {
+                    hide_gitignored = false,
+                    hide_hidden = false,
+                    hide_dotfiles = false,
+                    visible = true,
+                }
+            }
+        },
     },
 
     {
