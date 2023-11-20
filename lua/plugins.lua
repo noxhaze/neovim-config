@@ -125,7 +125,7 @@ return {
         config = function ()
             require("lualine").setup({
                 options = {
-                    theme = "base16",
+                    theme = "everforest",
                 },
             })
         end
@@ -192,5 +192,9 @@ return {
             },
         },
         lazy = false,
+    },
+
+    {
+        "sainnhe/everforest",
     },
 }
