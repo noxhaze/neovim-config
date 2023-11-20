@@ -7,6 +7,7 @@
   "cmp-nvim-lsp": { "branch": "main", "commit": "44b16d11215dce86f253ce0c30949813c0a90765" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
+  "colorbuddy.nvim": { "branch": "master", "commit": "cdb5b0654d3cafe61d2a845e15b2b4b0e78e752a" },
   "everforest": { "branch": "master", "commit": "72f101bd63228a1a45012325e39c5280ec22c828" },
   "gitsigns.nvim": { "branch": "main", "commit": "af0f583cd35286dd6f0e3ed52622728703237e50" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
@@ -25,5 +26,6 @@
   "plenary.nvim": { "branch": "master", "commit": "50012918b2fc8357b87cff2a7f7f0446e47da174" },
   "telescope-project.nvim": { "branch": "master", "commit": "5460c6c60d48618c5c746e5b1cad4c3e8262fdae" },
   "telescope.nvim": { "branch": "master", "commit": "20bf20500c95208c3ac0ef07245065bf94dcab15" },
-  "tomorrow-night.vim": { "branch": "master", "commit": "630abe71eeb18a78708ee91a9c7aa6009aaabf09" }
+  "tomorrow-night.vim": { "branch": "master", "commit": "630abe71eeb18a78708ee91a9c7aa6009aaabf09" },
+  "vitesse.nvim": { "branch": "main", "commit": "bee097c673d558c7f0217255306ce5b2462e261d" }
 }

@@ -119,13 +119,10 @@ return {
     {
         "nvim-lualine/lualine.nvim",
         lazy = false,
-        dependencies = {
-            "squarefrog/tomorrow-night.vim",
-        },
         config = function ()
             require("lualine").setup({
                 options = {
-                    theme = "everforest",
+                    theme = "vitesse",
                 },
             })
         end
@@ -196,5 +193,12 @@ return {
 
     {
         "sainnhe/everforest",
+    },
+
+    {
+        "2nthony/vitesse.nvim",
+        dependencies = {
+            "tjdevries/colorbuddy.nvim",
+        },
     },
 }

@@ -76,4 +76,4 @@ local plugins = require("plugins")
 require("lazy").setup(plugins, opts)
 require("lsp")
 
-vim.cmd("colorscheme everforest")
+vim.cmd("colorscheme vitesse")
