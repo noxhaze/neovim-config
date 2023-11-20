@@ -180,4 +180,17 @@ return {
             require('colorizer').setup()
         end
     },
+
+    {
+        "numToStr/Comment.nvim",
+        opts = {
+            toggler = {
+                line = "<Leader>/",
+            },
+            opleader = {
+                line = "<Leader>/",
+            },
+        },
+        lazy = false,
+    },
 }
