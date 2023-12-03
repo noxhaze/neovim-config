@@ -122,7 +122,7 @@ return {
         config = function ()
             require("lualine").setup({
                 options = {
-                    theme = "vitesse",
+                    theme = "ayu",
                 },
             })
         end
@@ -200,5 +200,19 @@ return {
         dependencies = {
             "tjdevries/colorbuddy.nvim",
         },
+    },
+
+    {
+        "metalelf0/jellybeans-nvim",
+    },
+
+    {
+        "Shatur/neovim-ayu",
+        config = function ()
+            require("ayu").setup({
+                mirage = false,
+                overrides = {},
+            })
+        end
     },
 }
