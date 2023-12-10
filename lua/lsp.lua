@@ -83,3 +83,7 @@ lspconfig.cssls.setup({
 lspconfig.bashls.setup({
     on_attach = on_attach,
 })
+
+lspconfig.glslls.setup({
+    on_attach = on_attach,
+})
