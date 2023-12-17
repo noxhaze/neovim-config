@@ -18,7 +18,7 @@ vim.opt.termguicolors = true
 vim.opt.incsearch = true
 vim.opt.hlsearch = false
 vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.opt.smartcase = false 
 
 vim.api.nvim_replace_termcodes('<C-\\><C-N>', true, true, true)
 
