@@ -43,28 +43,36 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 lspconfig.clangd.setup({
-    on_attach = on_attach
+    on_attach = on_attach,
+    capabilities = capabilities,
 })
 
 lspconfig.rust_analyzer.setup({
-    on_attach = on_attach
+    on_attach = on_attach,
+    capabilities = capabilities,
 })
 
 lspconfig.omnisharp.setup({
-    on_attach = on_attach
+    on_attach = on_attach,
+    capabilities = capabilities,
 })
 
 lspconfig.lua_ls.setup({
-    on_attach = on_attach
+    on_attach = on_attach,
+    capabilities = capabilities,
 })
 
 lspconfig.svelte.setup({
     on_attach = on_attach,
+    capabilities = capabilities,
 })
 
 lspconfig.tsserver.setup({
     on_attach = on_attach,
+    capabilities = capabilities,
 })
 
 lspconfig.cssls.setup({
@@ -82,12 +90,15 @@ lspconfig.cssls.setup({
 
 lspconfig.bashls.setup({
     on_attach = on_attach,
+    capabilities = capabilities,
 })
 
 lspconfig.glslls.setup({
     on_attach = on_attach,
+    capabilities = capabilities,
 })
 
 lspconfig.marksman.setup({
     on_attach = on_attach,
+    capabilities = capabilities,
 })
