@@ -9,6 +9,33 @@ require("nvim-treesitter.configs").setup {
         }
     },
 
+    ensure_installed = {
+        "bash",
+        "comment",
+        "css",
+        "cpp",
+        "c",
+        "c_sharp",
+        "lua",
+        "markdown",
+        "toml",
+        "typescript",
+        "javascript",
+        "html",
+        "json",
+        "scss",
+        "svelte",
+        "glsl",
+        "gitcommit",
+        "gitignore",
+        "make",
+        "org",
+        "rust",
+        "markdown_inline",
+        "gdscript",
+        "godot_resource",
+    },
+
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
