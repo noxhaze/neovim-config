@@ -21,6 +21,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = false 
 
 vim.api.nvim_replace_termcodes('<C-\\><C-N>', true, true, true)
+vim.g.loaded_python3_provider = 0
 
 local opts = {
     noremap = true,
