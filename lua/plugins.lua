@@ -230,4 +230,9 @@ return {
             }
         end
     },
+
+    {
+        "christoomey/vim-tmux-navigator",
+        lazy = false,
+    },
 }
