@@ -101,3 +101,9 @@ lspconfig.marksman.setup({
     on_attach = on_attach,
     capabilities = capabilities,
 })
+
+lspconfig.hls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "haskell", "lhaskell", "cabal" },
+})

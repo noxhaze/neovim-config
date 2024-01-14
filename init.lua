@@ -35,10 +35,15 @@ vim.keymap.set('i', "<C-l>", "<Right>", opts);
 
 vim.keymap.set('i', "<C-e>", "<End>", opts);
 
-vim.keymap.set('n', "<C-h>", "<C-w>h", opts);
-vim.keymap.set('n', "<C-j>", "<C-w>j", opts);
-vim.keymap.set('n', "<C-l>", "<C-w>l", opts);
-vim.keymap.set('n', "<C-k>", "<C-w>k", opts);
+-- vim.keymap.set('n', "<C-h>", "<C-w>h", opts);
+-- vim.keymap.set('n', "<C-j>", "<C-w>j", opts);
+-- vim.keymap.set('n', "<C-l>", "<C-w>l", opts);
+-- vim.keymap.set('n', "<C-k>", "<C-w>k", opts);
+
+vim.keymap.set('n', "<C-h>", "<cmd>TmuxNavigateLeft<cr>", opts);
+vim.keymap.set('n', "<C-j>", "<cmd>TmuxNavigateDown<cr>", opts);
+vim.keymap.set('n', "<C-l>", "<cmd>TmuxNavigateRight<cr>", opts);
+vim.keymap.set('n', "<C-k>", "<cmd>TmuxNavigateUp<cr>", opts);
 
 vim.keymap.set("n", "<Leader>FF", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", opts);
 vim.keymap.set("n", "<Leader>fs", "<cmd>Telescope live_grep theme=ivy<cr>", opts);
@@ -78,12 +83,4 @@ require("lazy").setup(plugins, opts)
 require("lsp")
 
 vim.cmd("colorscheme jellybeans-nvim")
-vim.cmd [[highlight Headline1 guibg=#1e2718]]
-vim.cmd [[highlight Headline2 guibg=#21262d]]
-vim.cmd [[highlight CodeBlock guibg=#1c1c1c]]
-vim.cmd [[highlight Dash guibg=#D19A66 gui=bold]]
 
-vim.keymap.set("n", "<C-h>", "<cmd>TmuxNavigateLeft<CR>", opts) 
-vim.keymap.set("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>", opts) 
-vim.keymap.set("n", "<C-l>", "<cmd>TmuxNavigateRight<CR>", opts) 
-vim.keymap.set("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>", opts) 
