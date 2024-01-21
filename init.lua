@@ -82,5 +82,4 @@ local plugins = require("plugins")
 require("lazy").setup(plugins, opts)
 require("lsp")
 
-vim.cmd("colorscheme jellybeans-nvim")
-
+vim.cmd("colorscheme catppuccin-mocha")

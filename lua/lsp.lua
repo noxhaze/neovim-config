@@ -9,7 +9,7 @@ require("mason").setup({
 })
 
 require("mason-lspconfig").setup({
-    ensure_installed = { "clangd", "rust_analyzer", "omnisharp", "lua_ls", "svelte", "tsserver", "cssls", "bashls", "marksman" },
+    ensure_installed = { "clangd", "rust_analyzer", "omnisharp", "lua_ls", "svelte", "tsserver", "cssls", "bashls", "marksman", "cmake" },
 })
 
 local lspconfig = require("lspconfig")
@@ -106,4 +106,9 @@ lspconfig.hls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
     filetypes = { "haskell", "lhaskell", "cabal" },
+})
+
+lspconfig.cmake.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
 })
