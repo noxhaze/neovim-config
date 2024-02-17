@@ -92,7 +92,7 @@ lspconfig.bashls.setup({
     capabilities = capabilities,
 })
 
-lspconfig.glslls.setup({
+lspconfig.glsl_analyzer.setup({
     on_attach = on_attach,
     capabilities = capabilities,
 })
