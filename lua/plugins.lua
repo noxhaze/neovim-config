@@ -159,7 +159,7 @@ return {
           "nvim-tree/nvim-web-devicons",
           "MunifTanjim/nui.nvim",
         },
-        config = {
+        opts = {
             filesystem = {
                 filtered_items = {
                     hide_gitignored = false,
@@ -249,5 +249,10 @@ return {
                 }
             })
         end
+    },
+
+    {
+        "jakemason/ouroboros",
+        require = { { "nvim-lua/plenary.nvim" } },
     },
 }
