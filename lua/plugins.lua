@@ -66,10 +66,6 @@ return {
     },
 
     {
-        "squarefrog/tomorrow-night.vim",
-    },
-
-    {
         "nvim-lua/plenary.nvim",
     },
 
@@ -122,7 +118,7 @@ return {
         config = function ()
             require("lualine").setup({
                 options = {
-                    theme = "catppuccin",
+                    theme = "kanagawa",
                 },
             })
         end
@@ -192,46 +188,6 @@ return {
     },
 
     {
-        "sainnhe/everforest",
-    },
-
-    {
-        "2nthony/vitesse.nvim",
-        dependencies = {
-            "tjdevries/colorbuddy.nvim",
-        },
-    },
-
-    {
-        "metalelf0/jellybeans-nvim",
-        dependencies = {
-            "rktjmp/lush.nvim",
-        },
-    },
-
-    {
-        "Shatur/neovim-ayu",
-        config = function ()
-            require("ayu").setup({
-                mirage = false,
-                overrides = {},
-            })
-        end
-    },
-
-    {
-        "lukas-reineke/headlines.nvim",
-        dependencies = "nvim-treesitter/nvim-treesitter",
-        config = function ()
-            require("headlines").setup {
-                org = {
-                    headline_highlights = { "Headline1", "Headline2" },
-                },
-            }
-        end
-    },
-
-    {
         "christoomey/vim-tmux-navigator",
         lazy = false,
     },
@@ -254,5 +210,26 @@ return {
     {
         "jakemason/ouroboros",
         require = { { "nvim-lua/plenary.nvim" } },
+    },
+
+    {
+        "rebelot/kanagawa.nvim",
+        config = function ()
+            require("kanagawa").setup({
+                colors = {
+                    theme = {
+                        all = {
+                            ui = {
+                                bg_gutter = "none"
+                            }
+                        }
+                    }
+                }
+            })
+        end
+    },
+
+    {
+        "opdavies/toggle-checkbox.nvim"
     },
 }

@@ -18,12 +18,12 @@ vim.opt.termguicolors = true
 vim.opt.incsearch = true
 vim.opt.hlsearch = false
 vim.opt.ignorecase = true
-vim.opt.smartcase = false 
+vim.opt.smartcase = false
 
 vim.api.nvim_replace_termcodes('<C-\\><C-N>', true, true, true)
 vim.g.loaded_python3_provider = 0
 
-local opts = { 
+local opts = {
     noremap = true,
     silent = true,
 }
@@ -40,10 +40,15 @@ vim.keymap.set('n', "<C-j>", "<cmd>TmuxNavigateDown<cr>", opts);
 vim.keymap.set('n', "<C-l>", "<cmd>TmuxNavigateRight<cr>", opts);
 vim.keymap.set('n', "<C-k>", "<cmd>TmuxNavigateUp<cr>", opts);
 
-vim.keymap.set("n", "<Leader>FF", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", opts);
+vim.keymap.set("n", "<Leader>ff",
+    "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+    opts);
 vim.keymap.set("n", "<Leader>fs", "<cmd>Telescope live_grep theme=ivy<cr>", opts);
-vim.keymap.set("n", "<Leader>ff", "<cmd>Telescope find_files<cr>", opts);
-vim.keymap.set("n", "<Leader>fb", "<cmd>Telescope buffers<cr>", opts);
+vim.keymap.set("n", "<Leader>FF", "<cmd>Telescope find_files<cr>", opts);
+vim.keymap.set("n", "<Leader>FB", "<cmd>Telescope buffers<cr>", opts);
+vim.keymap.set("n", "<Leader>fb",
+    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+    opts);
 vim.keymap.set("n", "<C-p>", ":lua require('telescope').extensions.project.project{}<CR>", opts);
 
 vim.keymap.set("n", "<Leader>h", ":lua require('nvterm.terminal').new 'horizontal'<CR>", opts)
@@ -60,6 +65,9 @@ vim.keymap.set("n", "<Leader>x", ":bp <BAR> bd #<CR>", opts)
 
 vim.keymap.set("n", "<C-e>", ":Ouroboros<CR>", opts);
 vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>", opts)
+
+vim.keymap.set("n", "<C-b>", "0f(bvt(y:Ouroboros<CR>/<C-r>0<CR>mm :Ouroboros<CR>0f(vf)y:Ouroboros<CR>`m0f(vf)p :w<CR>", opts)
+vim.keymap.set('n', '<leader>tt', ":lua require('toggle-checkbox').toggle()<CR>", opts);
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -78,4 +86,4 @@ local plugins = require("plugins")
 require("lazy").setup(plugins, opts)
 require("lsp")
 
-vim.cmd("colorscheme catppuccin-mocha")
+vim.cmd("colorscheme kanagawa-dragon")
