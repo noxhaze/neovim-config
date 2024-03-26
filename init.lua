@@ -66,7 +66,7 @@ vim.keymap.set("n", "<Leader>x", ":bp <BAR> bd #<CR>", opts)
 vim.keymap.set("n", "<C-e>", ":Ouroboros<CR>", opts);
 vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>", opts)
 
-vim.keymap.set("n", "<C-b>", "0f(bvt(y:Ouroboros<CR>/<C-r>0<CR>mm :Ouroboros<CR>0f(vf)y:Ouroboros<CR>`m0f(vf)p :w<CR>", opts)
+vim.keymap.set("n", "<C-b>", "0f(bvt(y:Ouroboros<CR>/<C-r>0<CR>mm :Ouroboros<CR>0f(vf)y:Ouroboros<CR>`m0f(vf)p :w<CR> :Ouroboros<CR>", opts)
 vim.keymap.set('n', '<leader>tt', ":lua require('toggle-checkbox').toggle()<CR>", opts);
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
