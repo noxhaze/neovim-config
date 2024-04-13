@@ -79,17 +79,19 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
-local opts = { noremap = true, silent = true }
+local custom_opts = { noremap = true, silent = true }
 
-vim.keymap.set('i', '<C-h>', '<Left>', opts)
-vim.keymap.set('i', '<C-j>', '<Down>', opts)
-vim.keymap.set('i', '<C-k>', '<Up>', opts)
-vim.keymap.set('i', '<C-l>', '<Right>', opts)
+require 'custom.special'
 
-vim.keymap.set('n', '<C-h>', '<cmd>TmuxNavigateLeft<cr>', opts)
-vim.keymap.set('n', '<C-j>', '<cmd>TmuxNavigateDown<cr>', opts)
-vim.keymap.set('n', '<C-l>', '<cmd>TmuxNavigateRight<cr>', opts)
-vim.keymap.set('n', '<C-k>', '<cmd>TmuxNavigateUp<cr>', opts)
+vim.keymap.set('i', '<C-h>', '<Left>', custom_opts)
+vim.keymap.set('i', '<C-j>', '<Down>', custom_opts)
+vim.keymap.set('i', '<C-k>', '<Up>', custom_opts)
+vim.keymap.set('i', '<C-l>', '<Right>', custom_opts)
+
+vim.keymap.set('n', '<C-h>', '<cmd>TmuxNavigateLeft<crcustom_>', custom_opts)
+vim.keymap.set('n', '<C-j>', '<cmd>TmuxNavigateDown<cr>', custom_opts)
+vim.keymap.set('n', '<C-l>', '<cmd>TmuxNavigateRight<cr>', custom_opts)
+vim.keymap.set('n', '<C-k>', '<cmd>TmuxNavigateUp<cr>', custom_opts)
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -393,7 +395,10 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        clangd = {},
+        clangd = {
+          cmd = { 'clangd', '-header-insertion=never' },
+          capabilities = {},
+        },
         -- gopls = {},
         -- pyright = {},
         rust_analyzer = {},
@@ -565,12 +570,12 @@ require('lazy').setup({
           --
           -- <c-l> will move you to the right of each of the expansion locations.
           -- <c-h> is similar, except moving you backwards.
-          ['<C-i>'] = cmp.mapping(function()
+          ['<C-m>'] = cmp.mapping(function()
             if luasnip.expand_or_locally_jumpable() then
               luasnip.expand_or_jump()
             end
           end, { 'i', 's' }),
-          ['<C-u>'] = cmp.mapping(function()
+          ['<C-d>'] = cmp.mapping(function()
             if luasnip.locally_jumpable(-1) then
               luasnip.jump(-1)
             end
@@ -596,9 +601,6 @@ require('lazy').setup({
     'folke/tokyonight.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       vim.cmd.colorscheme 'kanagawa-dragon'
 
       -- You can configure highlights by doing something like:
@@ -619,13 +621,6 @@ require('lazy').setup({
       --  - yinq - [Y]ank [I]nside [N]ext [']quote
       --  - ci'  - [C]hange [I]nside [']quote
       require('mini.ai').setup { n_lines = 500 }
-
-      -- Add/delete/replace surroundings (brackets, quotes, etc.)
-      --
-      -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-      -- - sd'   - [S]urround [D]elete [']quotes
-      -- - sr)'  - [S]urround [R]eplace [)] [']
-      require('mini.surround').setup()
 
       local statusline = require 'mini.statusline'
       statusline.setup { use_icons = vim.g.have_nerd_font }

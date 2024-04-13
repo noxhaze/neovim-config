@@ -13,10 +13,6 @@ return {
   },
 
   {
-    'jakemason/ouroboros',
-  },
-
-  {
     'rebelot/kanagawa.nvim',
     config = function()
       require('kanagawa').setup {
@@ -33,9 +29,10 @@ return {
     end,
   },
 
-  {
-    'opdavies/toggle-checkbox.nvim',
-  },
+  { 'rose-pine/neovim', name = 'rose-pine' },
+  { 'jakemason/ouroboros' },
+  { 'opdavies/toggle-checkbox.nvim' },
+  { 'norcalli/nvim-colorizer.lua' },
 
   {
     'nvim-tree/nvim-tree.lua',
