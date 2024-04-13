@@ -74,8 +74,8 @@ return {
     opts = {
       ensure_installed = { 'bash', 'c', 'cpp', 'html', 'lua', 'luadoc', 'markdown', 'c_sharp', 'glsl', 'hlsl', 'css', 'gitignore' },
       auto_install = true,
-      highilight = {
-        enable = true
+      highlight = {
+        enable = false 
       },
       indent = { enable = false, },
     },
@@ -98,4 +98,10 @@ return {
   { 'hrsh7th/nvim-cmp' },
   { 'L3MON4D3/LuaSnip' },
   { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
+
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+  },
 }
