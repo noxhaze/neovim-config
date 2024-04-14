@@ -19,7 +19,9 @@ require('mason-lspconfig').setup({
     'cssls',
     'html',
     'lua_ls',
-    'omnisharp'
+    'omnisharp',
+    'bashls',
+    'cmake',
   },
   handlers = {
     function(server_name)

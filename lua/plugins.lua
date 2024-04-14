@@ -40,7 +40,12 @@ return {
   {
     'nvim-tree/nvim-tree.lua',
     config = function()
-      require('nvim-tree').setup {}
+      require('nvim-tree').setup {
+        filters = {
+          dotfiles = false,
+          git_ignored = false,
+        },
+      }
     end,
   },
 
@@ -50,20 +55,18 @@ return {
     config = function ()
        -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
+      local noPreview = require('telescope.themes').get_dropdown{ previewer = false }
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-      vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
+      vim.keymap.set('n', '<leader>ff', function() builtin.find_files(noPreview) end, { desc = '[F]ind [F]iles' })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<leader>fs', builtin.live_grep, { desc = 'Search by Grep' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-      vim.keymap.set('n', '<leader><leader>', function()
-        builtin.buffers(require('telescope.themes').get_dropdown {
-          previewer = false,
-        })
-      end, { desc = '[F]ind existing [B]uffers' })
+      vim.keymap.set('n', '<leader>ds', function() builtin.lsp_document_symbols(noPreview) end, { desc = '[D]ocument [S]ymbols'})
+      vim.keymap.set('n', '<leader><leader>', function() builtin.buffers(noPreview) end, { desc = '[F]ind existing [B]uffers' })
 
     end
   },
