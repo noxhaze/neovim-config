@@ -31,6 +31,8 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
+vim.opt.termguicolors = true
+
 vim.opt.cursorline = true
 
 vim.opt.scrolloff = 15
@@ -57,5 +59,14 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = require 'plugins'
 require("lazy").setup(plugins)
 
-vim.cmd.colorscheme 'kanagawa-dragon'
+vim.opt.background = 'dark'
+vim.cmd.colorscheme 'gruvbox'
 require 'lsp'
+
+vim.api.nvim_create_autocmd({'BufWritePre'}, {
+  pattern = { '*.c', '*.h', '*.hpp', '*.cpp' },
+  -- buffer = vim.fn.bufnr(),
+  callback = function ()
+    vim.lsp.buf.format({async = true})
+  end
+})

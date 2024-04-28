@@ -6,6 +6,9 @@ return {
   { 'opdavies/toggle-checkbox.nvim' },
   { 'norcalli/nvim-colorizer.lua' },
   { 'numToStr/Comment.nvim', opts = { toggler = { line = '<Leader>,' }, opleader = { line = '<Leader>,' } } },
+  { 'xero/miasma.nvim', lazy = false, priority = 1000 },
+  { 'mjlaufer/gruvbox-darker.nvim' },
+  -- { 'morhetz/gruvbox' },
 
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
