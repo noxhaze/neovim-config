@@ -63,10 +63,10 @@ vim.opt.background = 'dark'
 vim.cmd.colorscheme 'gruvbox'
 require 'lsp'
 
-vim.api.nvim_create_autocmd({'BufWritePre'}, {
+vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   pattern = { '*.c', '*.h', '*.hpp', '*.cpp' },
   -- buffer = vim.fn.bufnr(),
-  callback = function ()
-    vim.lsp.buf.format({async = true})
+  callback = function()
+    vim.lsp.buf.format({ async = true })
   end
 })

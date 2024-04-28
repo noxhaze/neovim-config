@@ -23,6 +23,7 @@ vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
 vim.keymap.set('i', '<C-e>', '<End>', opts)
 vim.keymap.set('n', '<C-e>', ':Ouroboros<CR>', opts)
 vim.keymap.set("n", "<leader>tt", ":lua require('toggle-checkbox').toggle()<CR>")
+vim.keymap.set("n", "<C-b>", "<C-6>", opts)
 
 vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   pattern = { '*.c', '*.h', '*.cpp', '*.hpp' },
