@@ -64,7 +64,7 @@ vim.cmd.colorscheme 'gruvbox'
 require 'lsp'
 
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-  pattern = { '*.c', '*.h', '*.hpp', '*.cpp', '*.lua' },
+  pattern = { '*.c', '*.h', '*.hpp', '*.cpp', '*.lua', '.rs' },
   callback = function()
     vim.lsp.buf.format({ async = false })
   end
