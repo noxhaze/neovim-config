@@ -30,7 +30,6 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   desc = 'Load Ouroboros command on entering of C/C++ Files',
   group = vim.api.nvim_create_augroup('ouroboros-loader', { clear = true }),
   callback = function()
-    vim.keymap.set('n', '<C-e>', ':Ouroboros<CR>', opts)
+    vim.keymap.set('n', '<C-e>', ':ClangdSwitchSourceHeader<CR>', opts)
   end,
 })
-
