@@ -5,8 +5,8 @@ return {
   { 'jakemason/ouroboros' },
   { 'opdavies/toggle-checkbox.nvim' },
   { 'norcalli/nvim-colorizer.lua' },
-  { 'numToStr/Comment.nvim', opts = { toggler = { line = '<Leader>,' }, opleader = { line = '<Leader>,' } } },
-  { 'xero/miasma.nvim', lazy = false, priority = 1000 },
+  { 'numToStr/Comment.nvim',          opts = { toggler = { line = '<Leader>,' }, opleader = { line = '<Leader>,' } } },
+  { 'xero/miasma.nvim',               lazy = false,                                                                  priority = 1000 },
   { 'mjlaufer/gruvbox-darker.nvim' },
   -- { 'morhetz/gruvbox' },
 
@@ -55,10 +55,10 @@ return {
   {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function ()
-       -- See `:help telescope.builtin`
+    config = function()
+      -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
-      local noPreview = require('telescope.themes').get_dropdown{ previewer = false }
+      local noPreview = require('telescope.themes').get_dropdown { previewer = false }
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
       vim.keymap.set('n', '<leader>ff', function() builtin.find_files(noPreview) end, { desc = '[F]ind [F]iles' })
@@ -68,9 +68,10 @@ return {
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-      vim.keymap.set('n', '<leader>ds', function() builtin.lsp_document_symbols(noPreview) end, { desc = '[D]ocument [S]ymbols'})
-      vim.keymap.set('n', '<leader><leader>', function() builtin.buffers(noPreview) end, { desc = '[F]ind existing [B]uffers' })
-
+      vim.keymap.set('n', '<leader>ds', function() builtin.lsp_document_symbols(noPreview) end,
+        { desc = '[D]ocument [S]ymbols' })
+      vim.keymap.set('n', '<leader><leader>', function() builtin.buffers(noPreview) end,
+        { desc = '[F]ind existing [B]uffers' })
     end
   },
 
@@ -78,14 +79,14 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'cpp', 'html', 'lua', 'luadoc', 'markdown', 'c_sharp', 'glsl', 'hlsl', 'css', 'gitignore' },
+      ensure_installed = { 'bash', 'c', 'cpp', 'html', 'lua', 'luadoc', 'markdown', 'c_sharp', 'glsl', 'hlsl', 'css', 'gitignore', 'rust' },
       auto_install = true,
       highlight = {
-        enable = false 
+        enable = false
       },
       indent = { enable = false, },
     },
-    config = function (_, opts)
+    config = function(_, opts)
       require('nvim-treesitter.configs').setup(opts)
     end,
   },
@@ -103,7 +104,7 @@ return {
   { 'hrsh7th/cmp-nvim-lsp' },
   { 'hrsh7th/nvim-cmp' },
   { 'L3MON4D3/LuaSnip' },
-  { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
+  { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
 
   {
     'windwp/nvim-autopairs',
