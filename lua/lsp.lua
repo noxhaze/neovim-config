@@ -7,7 +7,6 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set('n', 'rn', vim.lsp.buf.rename, { buffer = bufnr })
   vim.keymap.set('n', 'ca', vim.lsp.buf.code_action, { buffer = bufnr })
 end)
-
 -- to learn how to use mason.nvim
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
 require('mason').setup({})

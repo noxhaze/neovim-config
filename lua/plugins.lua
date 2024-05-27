@@ -6,9 +6,8 @@ return {
   { 'opdavies/toggle-checkbox.nvim' },
   { 'norcalli/nvim-colorizer.lua' },
   { 'numToStr/Comment.nvim',          opts = { toggler = { line = '<Leader>,' }, opleader = { line = '<Leader>,' } } },
-  { 'xero/miasma.nvim',               lazy = false,                                                                  priority = 1000 },
-  { 'mjlaufer/gruvbox-darker.nvim' },
-  -- { 'morhetz/gruvbox' },
+  -- { 'mjlaufer/gruvbox-darker.nvim' },
+  { 'morhetz/gruvbox' },
 
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -79,7 +78,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'cpp', 'html', 'lua', 'luadoc', 'markdown', 'c_sharp', 'glsl', 'hlsl', 'css', 'gitignore', 'rust' },
+      ensure_installed = { 'bash', 'c', 'cpp', 'html', 'lua', 'luadoc', 'markdown', 'c_sharp', 'glsl', 'hlsl', 'css', 'gitignore', 'rust', 'ninja' },
       auto_install = true,
       highlight = {
         enable = false
@@ -89,12 +88,6 @@ return {
     config = function(_, opts)
       require('nvim-treesitter.configs').setup(opts)
     end,
-  },
-
-  {
-    'b0o/incline.nvim',
-    dependencies = { 'SmiteshP/nvim-navic' },
-    config = require 'incline-custom'
   },
 
   { 'williamboman/mason.nvim' },

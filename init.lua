@@ -59,12 +59,12 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = require 'plugins'
 require("lazy").setup(plugins)
 
-vim.opt.background = 'dark'
+vim.opt.background = 'light'
 vim.cmd.colorscheme 'gruvbox'
 require 'lsp'
 
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-  pattern = { '*.c', '*.h', '*.hpp', '*.cpp', '*.lua', '.rs' },
+  pattern = { '*.c', '*.h', '*.hpp', '*.cpp', '*.lua', '*.rs' },
   callback = function()
     vim.lsp.buf.format({ async = false })
   end
