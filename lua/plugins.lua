@@ -4,10 +4,11 @@ return {
   { 'nvim-tree/nvim-web-devicons' },
   { 'jakemason/ouroboros' },
   { 'opdavies/toggle-checkbox.nvim' },
-  { 'norcalli/nvim-colorizer.lua' },
+  -- { 'norcalli/nvim-colorizer.lua' },
   { 'numToStr/Comment.nvim',          opts = { toggler = { line = '<Leader>,' }, opleader = { line = '<Leader>,' } } },
   -- { 'mjlaufer/gruvbox-darker.nvim' },
-  { 'morhetz/gruvbox' },
+  -- { 'morhetz/gruvbox' },
+  { "EdenEast/nightfox.nvim" },
 
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',

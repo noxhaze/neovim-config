@@ -59,8 +59,8 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = require 'plugins'
 require("lazy").setup(plugins)
 
-vim.opt.background = 'light'
-vim.cmd.colorscheme 'gruvbox'
+require 'dont_touch.theme_changer'
+-- vim.cmd.colorscheme 'carbonfox'
 require 'lsp'
 
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
