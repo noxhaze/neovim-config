@@ -59,9 +59,19 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = require 'plugins'
 require("lazy").setup(plugins)
 
-require 'dont_touch.theme_changer'
--- vim.cmd.colorscheme 'carbonfox'
 require 'lsp'
+
+vim.opt.termguicolors = true
+vim.cmd.colorscheme 'melange'
+
+local color_scheme = vim.system({ "gsettings", "get", "org.gnome.desktop.interface", "color-scheme" }, { text = true })
+local result = color_scheme.wait(color_scheme)
+if result.stdout == "'default'\n" then
+  vim.opt.background = "light"
+else
+  vim.opt.background = "dark"
+end
+
 
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   pattern = { '*.c', '*.h', '*.hpp', '*.cpp', '*.lua', '*.rs' },

@@ -3,12 +3,11 @@ return {
   { 'christoomey/vim-tmux-navigator', lazy = false },
   { 'nvim-tree/nvim-web-devicons' },
   { 'jakemason/ouroboros' },
-  { 'opdavies/toggle-checkbox.nvim' },
   -- { 'norcalli/nvim-colorizer.lua' },
   { 'numToStr/Comment.nvim',          opts = { toggler = { line = '<Leader>,' }, opleader = { line = '<Leader>,' } } },
-  -- { 'mjlaufer/gruvbox-darker.nvim' },
-  -- { 'morhetz/gruvbox' },
   { "EdenEast/nightfox.nvim" },
+  { "NLKNguyen/papercolor-theme" },
+  { "savq/melange-nvim" },
 
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -79,7 +78,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'cpp', 'html', 'lua', 'luadoc', 'markdown', 'c_sharp', 'glsl', 'hlsl', 'css', 'gitignore', 'rust', 'ninja' },
+      ensure_installed = { 'bash', 'c', 'cpp', 'html', 'lua', 'luadoc', 'markdown', 'c_sharp', 'glsl', 'hlsl', 'css', 'gitignore', 'rust', 'ninja', 'zig' },
       auto_install = true,
       highlight = {
         enable = false

@@ -21,7 +21,8 @@ require('mason-lspconfig').setup({
     'omnisharp',
     'bashls',
     'cmake',
-    'rust_analyzer'
+    'rust_analyzer',
+    'zls',
   },
   handlers = {
     function(server_name)

@@ -27,8 +27,8 @@ vim.keymap.set("n", "<C-b>", "<C-6>", opts)
 
 vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   pattern = { '*.c', '*.h', '*.cpp', '*.hpp' },
-  desc = 'Load Ouroboros command on entering of C/C++ Files',
-  group = vim.api.nvim_create_augroup('ouroboros-loader', { clear = true }),
+  desc = 'Load :ClangSwitchSourcHeader command on entering of C/C++ Files',
+  group = vim.api.nvim_create_augroup('cxx-source-switcher', { clear = true }),
   callback = function()
     vim.keymap.set('n', '<C-e>', ':ClangdSwitchSourceHeader<CR>', opts)
   end,
