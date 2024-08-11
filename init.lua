@@ -12,7 +12,6 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.breakindent = true
 
 vim.opt.ignorecase = true
-vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
@@ -71,7 +70,6 @@ if result.stdout == "'default'\n" then
 else
   vim.opt.background = "dark"
 end
-
 
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   pattern = { '*.c', '*.h', '*.hpp', '*.cpp', '*.lua', '*.rs' },
