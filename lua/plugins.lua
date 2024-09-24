@@ -8,6 +8,7 @@ return {
   { "EdenEast/nightfox.nvim" },
   { "NLKNguyen/papercolor-theme" },
   { "savq/melange-nvim" },
+  { "opdavies/toggle-checkbox.nvim" },
 
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
