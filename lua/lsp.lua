@@ -12,11 +12,8 @@ end)
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {
-    'tsserver',
     'glsl_analyzer',
     'clangd',
-    'cssls',
-    'html',
     'lua_ls',
     'omnisharp',
     'bashls',

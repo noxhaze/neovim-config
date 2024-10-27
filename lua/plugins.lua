@@ -5,9 +5,7 @@ return {
   { 'jakemason/ouroboros' },
   -- { 'norcalli/nvim-colorizer.lua' },
   { 'numToStr/Comment.nvim',          opts = { toggler = { line = '<Leader>,' }, opleader = { line = '<Leader>,' } } },
-  { "EdenEast/nightfox.nvim" },
   { "NLKNguyen/papercolor-theme" },
-  { "savq/melange-nvim" },
   { "opdavies/toggle-checkbox.nvim" },
 
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
@@ -23,22 +21,6 @@ return {
     },
   },
 
-  {
-    'rebelot/kanagawa.nvim',
-    config = function()
-      require('kanagawa').setup {
-        colors = {
-          theme = {
-            all = {
-              ui = {
-                bg_gutter = 'none',
-              },
-            },
-          },
-        },
-      }
-    end,
-  },
 
   {
     'nvim-tree/nvim-tree.lua',
