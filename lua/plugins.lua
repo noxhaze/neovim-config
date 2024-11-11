@@ -5,8 +5,8 @@ return {
   { 'jakemason/ouroboros' },
   -- { 'norcalli/nvim-colorizer.lua' },
   { 'numToStr/Comment.nvim',          opts = { toggler = { line = '<Leader>,' }, opleader = { line = '<Leader>,' } } },
-  { "NLKNguyen/papercolor-theme" },
   { "opdavies/toggle-checkbox.nvim" },
+  { "bluz71/vim-moonfly-colors",      name = "moonfly",                                                              lazy = false, priority = 1000 },
 
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',

@@ -61,7 +61,7 @@ require("lazy").setup(plugins)
 require 'lsp'
 
 vim.opt.termguicolors = true
-vim.cmd.colorscheme 'PaperColor'
+vim.cmd.colorscheme 'moonfly'
 
 local color_scheme = vim.system({ "gsettings", "get", "org.gnome.desktop.interface", "color-scheme" }, { text = true })
 local result = color_scheme.wait(color_scheme)
