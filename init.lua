@@ -63,14 +63,6 @@ require 'lsp'
 vim.opt.termguicolors = true
 vim.cmd.colorscheme 'moonfly'
 
-local color_scheme = vim.system({ "gsettings", "get", "org.gnome.desktop.interface", "color-scheme" }, { text = true })
-local result = color_scheme.wait(color_scheme)
-if result.stdout == "'default'\n" then
-  vim.opt.background = "light"
-else
-  vim.opt.background = "dark"
-end
-
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   pattern = { '*.c', '*.h', '*.hpp', '*.cpp', '*.lua', '*.rs' },
   callback = function()

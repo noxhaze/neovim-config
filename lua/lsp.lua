@@ -7,29 +7,24 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set('n', 'rn', vim.lsp.buf.rename, { buffer = bufnr })
   vim.keymap.set('n', 'ca', vim.lsp.buf.code_action, { buffer = bufnr })
 end)
--- to learn how to use mason.nvim
--- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
-require('mason').setup({})
-require('mason-lspconfig').setup({
-  ensure_installed = {
-    'glsl_analyzer',
-    'clangd',
-    'lua_ls',
-    'omnisharp',
-    'bashls',
-    'cmake',
-    'rust_analyzer',
-    'zls',
-  },
-  handlers = {
-    function(server_name)
-      require('lspconfig')[server_name].setup({})
-    end,
-  },
+
+local def_capabilites = require('cmp_nvim_lsp').default_capabilities()
+
+require('lspconfig').bashls.setup({
+  capabilities = def_capabilities,
+})
+
+require('lspconfig').lua_ls.setup({
+  capabilities = def_capabilities,
+})
+
+require('lspconfig').zls.setup({
+  capabilities = def_capabilities,
 })
 
 require('lspconfig').clangd.setup({
-  cmd = { 'clangd', '-header-insertion=never' }
+  cmd = { 'clangd', '-header-insertion=never' },
+  capabilities = def_capabilities,
 })
 
 local cmp = require 'cmp'

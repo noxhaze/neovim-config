@@ -3,7 +3,6 @@ return {
   { 'christoomey/vim-tmux-navigator', lazy = false },
   { 'nvim-tree/nvim-web-devicons' },
   { 'jakemason/ouroboros' },
-  -- { 'norcalli/nvim-colorizer.lua' },
   { 'numToStr/Comment.nvim',          opts = { toggler = { line = '<Leader>,' }, opleader = { line = '<Leader>,' } } },
   { "opdavies/toggle-checkbox.nvim" },
   { "bluz71/vim-moonfly-colors",      name = "moonfly",                                                              lazy = false, priority = 1000 },
@@ -20,7 +19,6 @@ return {
       },
     },
   },
-
 
   {
     'nvim-tree/nvim-tree.lua',
@@ -72,9 +70,6 @@ return {
       require('nvim-treesitter.configs').setup(opts)
     end,
   },
-
-  { 'williamboman/mason.nvim' },
-  { 'williamboman/mason-lspconfig.nvim' },
 
   { 'neovim/nvim-lspconfig' },
   { 'hrsh7th/cmp-nvim-lsp' },
