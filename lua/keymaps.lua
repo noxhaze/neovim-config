@@ -2,10 +2,10 @@ local opts = { noremap = true, silent = true }
 
 vim.keymap.set("x", "<Leader>p", "\"_dP", opts)
 
-vim.keymap.set('i', '<C-h>', '<Left>', opts)
-vim.keymap.set('i', '<C-j>', '<Down>', opts)
-vim.keymap.set('i', '<C-k>', '<Up>', opts)
-vim.keymap.set('i', '<C-l>', '<Right>', opts)
+-- vim.keymap.set('i', '<C-h>', '<Left>', opts)
+-- vim.keymap.set('i', '<C-j>', '<Down>', opts)
+-- vim.keymap.set('i', '<C-k>', '<Up>', opts)
+-- vim.keymap.set('i', '<C-l>', '<Right>', opts)
 
 vim.keymap.set('n', '<C-h>', '<cmd>TmuxNavigateLeft<crcustom_>', opts)
 vim.keymap.set('n', '<C-j>', '<cmd>TmuxNavigateDown<cr>', opts)
@@ -19,7 +19,6 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
-vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
 vim.keymap.set('i', '<C-e>', '<End>', opts)
 vim.keymap.set('n', '<C-e>', ':Ouroboros<CR>', opts)
 vim.keymap.set("n", "<leader>tt", ":lua require('toggle-checkbox').toggle()<CR>")

@@ -21,18 +21,6 @@ return {
   },
 
   {
-    'nvim-tree/nvim-tree.lua',
-    config = function()
-      require('nvim-tree').setup {
-        filters = {
-          dotfiles = false,
-          git_ignored = false,
-        },
-      }
-    end,
-  },
-
-  {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
@@ -75,7 +63,7 @@ return {
   { 'hrsh7th/cmp-nvim-lsp' },
   { 'hrsh7th/nvim-cmp' },
   { 'L3MON4D3/LuaSnip' },
-  { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+  { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
 
   {
     'windwp/nvim-autopairs',
