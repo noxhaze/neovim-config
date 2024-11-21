@@ -27,6 +27,10 @@ require('lspconfig').clangd.setup({
   capabilities = def_capabilities,
 })
 
+require('lspconfig').rust_analyzer.setup({
+  capabilities = def_capabilites,
+})
+
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 cmp.setup({

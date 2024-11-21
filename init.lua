@@ -61,7 +61,7 @@ require("lazy").setup(plugins)
 require 'lsp'
 
 vim.opt.termguicolors = true
-vim.cmd.colorscheme 'moonfly'
+vim.cmd.colorscheme 'ayu'
 
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   pattern = { '*.c', '*.h', '*.hpp', '*.cpp', '*.lua', '*.rs' },
