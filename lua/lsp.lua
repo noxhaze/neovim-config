@@ -10,25 +10,58 @@ end)
 
 local def_capabilites = require('cmp_nvim_lsp').default_capabilities()
 
-require('lspconfig').bashls.setup({
+local lspconfig = require 'lspconfig'
+
+lspconfig.bashls.setup({
   capabilities = def_capabilities,
 })
 
-require('lspconfig').lua_ls.setup({
+lspconfig.lua_ls.setup({
   capabilities = def_capabilities,
 })
 
-require('lspconfig').zls.setup({
+lspconfig.zls.setup({
   capabilities = def_capabilities,
 })
 
-require('lspconfig').clangd.setup({
+lspconfig.clangd.setup({
   cmd = { 'clangd', '-header-insertion=never' },
   capabilities = def_capabilities,
 })
 
-require('lspconfig').rust_analyzer.setup({
+lspconfig.rust_analyzer.setup({
   capabilities = def_capabilites,
+})
+
+lspconfig.ols.setup({
+  capabilities = def_capabilites,
+})
+
+lspconfig.glsl_analyzer.setup({
+  capabilities = def_capabilites,
+})
+
+lspconfig.nixd.setup({
+  capabilities = def_capabilites,
+  cmd = { "nixd" },
+  settings = {
+    nixd = {
+      nixpkgs = {
+        expr = "import <nixpkgs> { }",
+      },
+      formatting = {
+        command = { "nixfmt" },
+      },
+      options = {
+        nixos = {
+          expr = '(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations.k-on.options',
+        },
+        home_manager = {
+          expr = '(builtins.getFlake ("git+file://" + toString ./.)).homeConfigurations."ruixi@k-on".options',
+        },
+      },
+    },
+  },
 })
 
 local cmp = require 'cmp'

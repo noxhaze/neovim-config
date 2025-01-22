@@ -59,9 +59,17 @@ local plugins = require 'plugins'
 require("lazy").setup(plugins)
 
 require 'lsp'
+vim.treesitter.language.register('glsl', { 'glsl', 'comp', 'vert', 'frag' })
 
 vim.opt.termguicolors = true
-vim.cmd.colorscheme 'ayu'
+vim.cmd.colorscheme 'noctishc'
+
+vim.api.nvim_create_autocmd({ 'BufRead' }, {
+  pattern = { '*.comp', '*.vert', '*.frag' },
+  callback = function()
+    vim.cmd.set('filetype=glsl');
+  end
+})
 
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   pattern = { '*.c', '*.h', '*.hpp', '*.cpp', '*.lua', '*.rs' },
