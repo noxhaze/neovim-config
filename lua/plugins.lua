@@ -47,7 +47,7 @@ return {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
         opts = {
-            ensure_installed = { 'bash', 'c', 'cpp', 'html', 'lua', 'luadoc', 'markdown', 'c_sharp', 'glsl', 'hlsl', 'css', 'gitignore', 'rust', 'ninja', 'zig' },
+            ensure_installed = { 'bash', 'c', 'cpp', 'html', 'lua', 'luadoc', 'markdown', 'c_sharp', 'glsl', 'hlsl', 'css', 'gitignore', 'rust', 'ninja', 'zig', 'gdscript', 'gdshader' },
             auto_install = true,
             highlight = {
                 enable = false,

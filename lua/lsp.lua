@@ -64,6 +64,10 @@ lspconfig.nixd.setup({
   },
 })
 
+lspconfig.gdscript.setup({
+  capabilities = def_capabilites,
+})
+
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 cmp.setup({
