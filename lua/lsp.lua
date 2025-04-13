@@ -49,6 +49,11 @@ lspconfig.ols.setup({
   capabilities = def_capabilites,
 })
 
+vim.diagnostic.config({
+  signs = true,
+  virtual_text = true,
+})
+
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 cmp.setup({

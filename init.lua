@@ -72,18 +72,11 @@ vim.api.nvim_create_autocmd({ 'BufRead' }, {
 })
 
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-  pattern = { '*.c', '*.h', '*.hpp', '*.cpp', '*.lua', '*.rs' },
+  pattern = { '*.c', '*.h', '*.hpp', '*.cpp', '*.lua', '*.rs', '*.zig', '*.zon' },
   callback = function()
     vim.lsp.buf.format({ async = false })
   end
 })
-
--- vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
---   pattern = { '*.lua', '*.rs' },
---   callback = function()
---     vim.lsp.buf.format({ async = false })
---   end
--- })
 
 local ue5 = require("nvim-ue5")
 ue5.setup({
