@@ -62,7 +62,7 @@ require 'lsp'
 vim.treesitter.language.register('glsl', { 'glsl', 'comp', 'vert', 'frag' })
 
 vim.opt.termguicolors = true
-vim.cmd.colorscheme 'noctishc'
+vim.cmd.colorscheme 'industry'
 
 vim.api.nvim_create_autocmd({ 'BufRead' }, {
   pattern = { '*.comp', '*.vert', '*.frag' },
@@ -76,4 +76,16 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   callback = function()
     vim.lsp.buf.format({ async = false })
   end
+})
+
+-- vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+--   pattern = { '*.lua', '*.rs' },
+--   callback = function()
+--     vim.lsp.buf.format({ async = false })
+--   end
+-- })
+
+local ue5 = require("nvim-ue5")
+ue5.setup({
+  unreal_engine_path = "/home/maero/UnrealEngine5.5.4",
 })

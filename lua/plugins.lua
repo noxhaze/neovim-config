@@ -1,11 +1,38 @@
 return {
     { 'tpope/vim-sleuth' },
-    { 'christoomey/vim-tmux-navigator',    lazy = false },
+    { 'christoomey/vim-tmux-navigator', lazy = false },
     { 'nvim-tree/nvim-web-devicons' },
     { 'jakemason/ouroboros' },
-    { 'numToStr/Comment.nvim',             opts = { toggler = { line = '<Leader>,' }, opleader = { line = '<Leader>,' } } },
+    { 'numToStr/Comment.nvim',          opts = { toggler = { line = '<Leader>,' }, opleader = { line = '<Leader>,' } } },
     { "opdavies/toggle-checkbox.nvim" },
-    { "iagorrr/noctis-high-contrast.nvim", priority = 1000,                                                               lazy = false },
+    {
+        'Xett/nvim-ue5',
+        lazy = false,
+        dependencie = {
+            { 'neovim/nvim-lspconfig' },
+            { 'nvim-lua/plenary.nvim' },
+        },
+    },
+
+    {
+        "ViViDboarder/wombat.nvim",
+        dependencies = { { "rktjmp/lush.nvim" } },
+    },
+
+    {
+        "xero/evangelion.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            overrides = {
+                -- keyword = { fg = "#00ff00", bg = "#222222", undercurl = true },
+                ["@boolean"] = { link = "Special" },
+            },
+        },
+        init = function()
+            vim.cmd.colorscheme("evangelion")
+        end,
+    },
 
 
     { -- Adds git related signs to the gutter, as well as utilities for managing changes

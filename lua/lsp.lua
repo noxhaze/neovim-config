@@ -25,7 +25,7 @@ lspconfig.zls.setup({
 })
 
 lspconfig.clangd.setup({
-  cmd = { 'clangd', '-header-insertion=never' },
+  cmd = { 'clangd', '--header-insertion=never' },
   capabilities = def_capabilities,
 })
 
@@ -41,30 +41,11 @@ lspconfig.glsl_analyzer.setup({
   capabilities = def_capabilites,
 })
 
-lspconfig.nixd.setup({
+lspconfig.gdscript.setup({
   capabilities = def_capabilites,
-  cmd = { "nixd" },
-  settings = {
-    nixd = {
-      nixpkgs = {
-        expr = "import <nixpkgs> { }",
-      },
-      formatting = {
-        command = { "nixfmt" },
-      },
-      options = {
-        nixos = {
-          expr = '(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations.k-on.options',
-        },
-        home_manager = {
-          expr = '(builtins.getFlake ("git+file://" + toString ./.)).homeConfigurations."ruixi@k-on".options',
-        },
-      },
-    },
-  },
 })
 
-lspconfig.gdscript.setup({
+lspconfig.ols.setup({
   capabilities = def_capabilites,
 })
 
