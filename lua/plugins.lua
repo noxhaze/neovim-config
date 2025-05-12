@@ -5,14 +5,6 @@ return {
     { 'jakemason/ouroboros' },
     { 'numToStr/Comment.nvim',          opts = { toggler = { line = '<Leader>,' }, opleader = { line = '<Leader>,' } } },
     { "opdavies/toggle-checkbox.nvim" },
-    {
-        'Xett/nvim-ue5',
-        lazy = false,
-        dependencie = {
-            { 'neovim/nvim-lspconfig' },
-            { 'nvim-lua/plenary.nvim' },
-        },
-    },
 
     {
         "ViViDboarder/wombat.nvim",

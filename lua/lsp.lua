@@ -54,6 +54,7 @@ vim.diagnostic.config({
   virtual_text = true,
 })
 
+
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 cmp.setup({
