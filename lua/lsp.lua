@@ -20,6 +20,8 @@ lspconfig.lua_ls.setup({
   capabilities = def_capabilities,
 })
 
+lspconfig.asm_lsp.setup({ capabilities = def_capabilites })
+
 lspconfig.zls.setup({
   capabilities = def_capabilities,
 })

@@ -62,7 +62,6 @@ require 'lsp'
 vim.treesitter.language.register('glsl', { 'glsl', 'comp', 'vert', 'frag' })
 
 vim.opt.termguicolors = true
-vim.cmd.colorscheme 'wombat'
 
 vim.api.nvim_create_autocmd({ 'BufRead' }, {
   pattern = { '*.comp', '*.vert', '*.frag' },
@@ -72,7 +71,7 @@ vim.api.nvim_create_autocmd({ 'BufRead' }, {
 })
 
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-  pattern = { '*.c', '*.h', '*.hpp', '*.cpp', '*.lua', '*.rs', '*.zig', '*.zon' },
+  pattern = { '*.c', '*.h', '*.hpp', '*.cpp', '*.lua', '*.rs', '*.zig', '*.zon', '*.asm' },
   callback = function()
     vim.lsp.buf.format({ async = false })
   end
