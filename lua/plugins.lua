@@ -14,30 +14,6 @@ return {
             vim.cmd.colorscheme("lackluster-mint")
         end,
     },
-    -- {
-    --     "vague2k/vague.nvim",
-    --     init = function()
-    --         vim.cmd.colorscheme("vague")
-    --     end
-    -- },
-    --
-    --
-    -- {
-    --     "xero/evangelion.nvim",
-    --     lazy = false,
-    --     priority = 1000,
-    --     opts = {
-    --         overrides = {
-    --             -- keyword = { fg = "#00ff00", bg = "#222222", undercurl = true },
-    --             ["@boolean"] = { link = "Special" },
-    --         },
-    --     },
-    --     init = function()
-    --         -- vim.cmd.colorscheme("evangelion")
-    --     end,
-    -- },
-    --
-
     { -- Adds git related signs to the gutter, as well as utilities for managing changes
         'lewis6991/gitsigns.nvim',
         opts = {
@@ -88,7 +64,7 @@ return {
                 disable = { "mason" },
             },
             additional_vim_regex_highlighting = false,
-            file_ignore_patterns = { "mellow-glfw", "./mellow-glfw", "mellow-glfw/" },
+            file_ignore_patterns = { "mellow-glfw", "./mellow-glfw", "mellow-glfw/", "target/" },
         },
         config = function(_, opts)
             require('nvim-treesitter.configs').setup(opts)
@@ -101,8 +77,6 @@ return {
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/nvim-cmp' },
     { 'L3MON4D3/LuaSnip' },
-    { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
-
     {
         'windwp/nvim-autopairs',
         event = "InsertEnter",
